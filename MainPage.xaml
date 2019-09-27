@@ -1,0 +1,112 @@
+﻿<Page
+    x:Class="BlockAndFilter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BlockAndFilter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView PaneDisplayMode="Top">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Overview">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xECE4;" FontFamily="Segoe MDL2 Assets"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Calls" Icon="Phone"/>
+                <NavigationViewItem Content="Texts" Icon="Message"/>
+                <NavigationViewItem Content="Quiet hours">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE708;" FontFamily="Segoe MDL2 Assets"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Margin="32">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="150" Text="0" Foreground="{ThemeResource SystemAccentColor}"/>
+                        <TextBlock Grid.Row="1" Text="Calls blocked"/>
+                        <StackPanel Grid.Row="2" Margin="0,32,0,0">
+                            <TextBlock TextWrapping="Wrap" Text="Different numbers: 0"/>
+
+                            <TextBlock TextWrapping="Wrap" Margin="0,32,0,0" Text="During the past week: 0"/>
+                            <TextBlock TextWrapping="Wrap" Text="And more than once: 0"/>
+
+                            <TextBlock TextWrapping="Wrap" Margin="0,32,0,0" Text="During the past day: 0"/>
+                            <TextBlock TextWrapping="Wrap" Text="And more than once: 0"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Margin="32" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="150" Text="0" Foreground="{ThemeResource SystemAccentColor}"/>
+                        <TextBlock Grid.Row="1" Text="Texts blocked"/>
+                        <StackPanel Grid.Row="2" Margin="0,32,0,0">
+                            <TextBlock TextWrapping="Wrap" Text="Different numbers: 0"/>
+
+                            <TextBlock TextWrapping="Wrap" Margin="0,32,0,0" Text="During the past week: 0"/>
+                            <TextBlock TextWrapping="Wrap" Text="And more than once: 0"/>
+
+                            <TextBlock TextWrapping="Wrap" Margin="0,32,0,0" Text="During the past day: 0"/>
+                            <TextBlock TextWrapping="Wrap" Text="And more than once: 0"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <ListViewItem Grid.Row="0">
+                        <Grid Margin="16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <FontIcon Glyph="&#xE8F8;" FontFamily="Segoe MDL2 Assets"/>
+                            <TextBlock Margin="8" Grid.Column="1" Text="Configure blocked numbers"/>
+                        </Grid>
+                    </ListViewItem>
+                    
+                    <ListViewItem Grid.Row="1">
+                        <Grid Margin="16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <FontIcon Glyph="&#xE708;" FontFamily="Segoe MDL2 Assets"/>
+                            <TextBlock Margin="8" Grid.Column="1" Text="Configure quiet hours"/>
+                        </Grid>
+                    </ListViewItem>
+                </Grid>
+
+            </Grid>
+        </NavigationView>
+    </Grid>
+</Page>
